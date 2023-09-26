@@ -71,3 +71,43 @@ You can use terraform port but it won't for all cloud resources. You need check 
 If someone goes and delete or modifies cloud resource manually through ClickOps. 
 
 If we run Terraform plan is with attempt to put our infrstraucture back into the expected state fixing Configuration Drift
+
+## Fix Using Terraform Refresh
+
+```sh
+terraform apply -refresh-only -auto-approve
+```
+
+## Terraform Modules
+
+### Terraform Module Structure
+
+Best practice is to place modules in a `modules` directory when locally developing modules but you can name them whatever you want.
+
+### Passing Input Variables
+
+We can pass input variables into the module
+
+The module has to declare these variables into to their own `variables.tf` file
+```tf
+  module "terrahouse_aws" {
+  source = "./modules/terrahouse_aws"
+  user_uuid = var.user_uuid
+  bucket_name = var.bucket_name
+}
+```
+
+### Modules Sources
+
+Using the source we can import the module from various places eg:
+- locally, Local path
+- GitHub
+- Terraform Registry
+
+``` tf
+  module "terrahouse_aws" {
+  source = "./modules/terrahouse_aws"
+
+}
+
+```
