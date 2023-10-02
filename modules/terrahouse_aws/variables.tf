@@ -58,8 +58,4 @@ variable "assets_path" {
   type = string
 }
 
-variable "public_path" {
-  description = "The file path for the public directory"
-  type        = string
-}
 
