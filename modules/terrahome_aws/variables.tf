@@ -24,24 +24,9 @@ variable "user_uuid" {
 #}
 #
 
-variable "index_html_filepath" {
-  description = "The filepath to the index.html file"
+variable "public_path" {
+  description = "The file path for the public directory"
   type        = string
-
-  validation {
-    condition     = can(fileexists(var.index_html_filepath))
-    error_message = "The provided path for index.html is not valid or the file does not exist."
-  }
-}
-
-variable "error_html_filepath" {
-  description = "The filepath to the error.html file"
-  type        = string
-
-  validation {
-    condition     = can(fileexists(var.error_html_filepath))
-    error_message = "The provided path for error.html is not valid or the file does not exist."
-  }
 }
 
 variable "content_version" {
@@ -54,9 +39,5 @@ variable "content_version" {
   }
 }
 
-variable "assets_path" {
-  description = "Path to assets folder"
-  type = string
-}
 
 
