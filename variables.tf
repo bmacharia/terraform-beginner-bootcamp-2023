@@ -10,19 +10,9 @@ variable "teacherseat_user_uuid" {
   type = string
 }
 
-variable "arcanum" {
-  type = object({
-    public_path = string
-    content_version = number
-  })
-}
+variable "fender" {
 
-variable "payday" {
-  type = object({
-    public_path = string
-    content_version = number
-  })
-}
+variable "chowder"
 
 
 

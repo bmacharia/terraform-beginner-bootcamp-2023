@@ -28,42 +28,43 @@ provider "terratowns" {
   token=var.terratowns_access_token
 }
 
-module "home_arcanum_hosting" {
+module "home_chowder_hosting" {
   source = "./modules/terrahome_aws"
   user_uuid = var.teacherseat_user_uuid
-  public_path = var.arcanum.public_path
-  content_version = var.arcanum.content_version
-
-}
+  public_path = var.chowder.public_path
+  content_version = var.chowder.content_version
 
 resource "terratowns_home" "home" {
-  name = "How to play Arcanum in 2023!"
+  name = "Clam Chowder and Sourdough Bread, A Match Made in Heaven"
   description = <<DESCRIPTION
-Arcanum is a game from 2001 that shipped with alot of bugs.
-Modders have removed all the originals making this game really fun
-to play (despite that old look graphics). This is my guide that will
-show you how to play arcanum without spoiling the plot.
+East Coast meets West Coast. 
+The marriage of New England Clam chowder with the San Francisco Sourdough Bread 
+is a relatively modern culinary innovation. It's a combination
+that is both practical(edible bowl) and delicious
 DESCRIPTION
-  domain_name = module.home_arcanum_hosting.domain_name
-  town = "missingo"
-  content_version = var.arcanum.content_version
+  domain_name = module.home_chowder_hosting.domain_name
+  town = "cooker-cove"
+  content_version = var.chowder.content_version
 }
 
-module "home_payday_hostinig" {
+module "home_fender_hosting" {
   source = "./modules/terrahome_aws"
   user_uuid = var.teacherseat_user_uuid
-  public_path = var.payday.public_path  
-  content_version = var.payday.content_version
+  public_path = var.fender.public_path  
+  content_version = var.fender.content_version
 }
 
-resource "terratowns_home" "home_payday" {
- name = "Making Your Payday Bar!"
+resource "terratowns_home" "home_fender" {
+ name = "Fender Precision Bass"
  description = <<DESCRIPTION
-I am not a huge fan of Payday candy bars. But Some people are.
-But when it comes to Reeses's Peanut Butter Cups that is my weakness.
-It is nothing short of perfection.
+ Originally designed over 70 years ago, by Leo Fender, The Fender
+ Precision Bass or P-Bass has been used to provide the low-end for countless
+ hit songs in all genres of music, from Rock and Roll, Motown, Country,
+ and any other genre one can think of.
 DESCRIPTION
-  domain_name = module.home_payday_hostinig.domain_name
-  town = "missingo"
-  content_version = var.payday.content_version
-}
+  domain_name = module.home_fender_hosting.domain_name
+  town = "melomaniac-mansion"
+  content_version = var.fender.content_version
+
+
+
