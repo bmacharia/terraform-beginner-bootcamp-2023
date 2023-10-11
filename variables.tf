@@ -11,8 +11,12 @@ variable "teacherseat_user_uuid" {
 }
 
 variable "fender" {
+  type = string
+}
 
-variable "chowder"
+variable "chowder" {
+  type = string
+}
 
 
 
