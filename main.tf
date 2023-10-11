@@ -34,8 +34,6 @@ module "home_chowder_hosting" {
   public_path = var.chowder.public_path
   content_version = var.chowder.content_version
 
-}
-
 resource "terratowns_home" "home" {
   name = "Clam Chowder and Sourdough Bread, A Match Made in Heaven"
   description = <<DESCRIPTION
@@ -67,4 +65,6 @@ DESCRIPTION
   domain_name = module.home_fender_hosting.domain_name
   town = "melomaniac-mansion"
   content_version = var.fender.content_version
-}
+
+
+

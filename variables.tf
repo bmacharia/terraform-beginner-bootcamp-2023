@@ -11,18 +11,8 @@ variable "teacherseat_user_uuid" {
 }
 
 variable "fender" {
-  type = object({
-    public_path = string
-    content_version = number
-  })
-}
 
-variable "chowder" {
-  type = object({
-    public_path = string
-    content_version = number
-  })
-}
+variable "chowder"
 
 
 
