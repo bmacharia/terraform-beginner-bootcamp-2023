@@ -10,13 +10,17 @@ variable "teacherseat_user_uuid" {
   type = string
 }
 
-variable "fender" {
-  type = string
-}
-
 variable "chowder" {
-  type = string
+  type = object({
+    public_path = string
+    content_version = number
+  })
 }
 
-
+variable "fender" {
+  type = object({
+    public_path = string
+    content_version = number
+  })
+}
 
